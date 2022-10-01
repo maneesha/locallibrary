@@ -12,5 +12,11 @@ urlpatterns = [
     # instead of 
     # <a href="/catalog/">Home</a> 
     # which ill break if we change pattern to home page
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+
+
+    # View syntax is different because view gets implemented from a class in views.py
+    path('books/', views.BookListView.as_view(), name="books"),
+
+    path('book/<int:pk>', views.BookDetailView.as_view(), name="book-detail"),
 ]
