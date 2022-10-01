@@ -22,12 +22,18 @@ class AuthorAdmin(admin.ModelAdmin):
 
 admin.site.register(Author, AuthorAdmin)
 
+class BooksInstanceInline(admin.TabularInline):
+    model = BookInstance
+    # Without the extra = 0 this gives you a bunch of empty instances to use which looks messy
+    extra = 0
 
 @admin.register(Book)  # This decorator does exactly the same thing as the admin.site.register() syntax
 class BookAdmin(admin.ModelAdmin):
     # genre can't be called directly b/c MtM field can get too big
     # new function defined in models.py Book model
     list_display = ('title', 'author', 'display_genre')
+
+    inlines = [BooksInstanceInline]
 
 
 @admin.register(BookInstance)
