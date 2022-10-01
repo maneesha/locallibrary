@@ -18,13 +18,14 @@ admin.site.register(Author, AuthorAdmin)
 
 @admin.register(Book)  # This decorator does exactly the same thing as the admin.site.register() syntax
 class BookAdmin(admin.ModelAdmin):
-    pass 
+    # genre can't be called directly b/c MtM field can get too big
+    # new function defined in models.py Book model
+    list_display = ('title', 'author', 'display_genre')
 
 
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
     pass
-
 
 @admin.register(Genre)
 class GenreAdmin(admin.ModelAdmin):
