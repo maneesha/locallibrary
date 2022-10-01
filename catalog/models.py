@@ -97,6 +97,11 @@ class BookInstance(models.Model):
 
         return f'{self.id} ({self.book.title})'
 
+    def short_id(self):
+        """returns truncated book id """
+        return str(self.id)[:10]
+
+
 class Author(models.Model):
     """Model representing an author"""
 

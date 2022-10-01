@@ -48,7 +48,7 @@ class BookAdmin(admin.ModelAdmin):
 
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
-    list_display = ('id', 'book', 'status')
+    list_display = ('short_id', 'book', 'status')
 
     list_filter = ('status', 'due_back')
 
