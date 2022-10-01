@@ -12,6 +12,16 @@ class Genre(models.Model):
         """String for representing the model object"""
         return self.name
 
+class Language(models.Model):
+    """Model repesenting book language"""
+
+    # Ideally this would be drop down but I'm leaving it as free text for now
+    language = models.CharField(max_length=100, help_text="Enter the language the book is written in")
+
+    def __str__(self):
+        """String representation of language"""
+        return self.language
+
 
 class Book(models.Model):
     """Model representing a book (but not a specific copy of a book"""
