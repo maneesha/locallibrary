@@ -27,6 +27,8 @@ class BookAdmin(admin.ModelAdmin):
 class BookInstanceAdmin(admin.ModelAdmin):
     list_display = ('id', 'book', 'status')
 
+    list_filter = ('status', 'due_back')
+
 @admin.register(Genre)
 class GenreAdmin(admin.ModelAdmin):
     pass
