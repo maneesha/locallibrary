@@ -13,4 +13,12 @@
     <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
     <li><strong>Authors:</strong> {{ num_authors }}</li>
   </ul>
-{% endblock %}
+
+  <h2>Available Genres</h2>
+  <!-- <p>{{ all_genres }}</p> -->
+  <ul>
+  {% for genre in all_genres %}
+  <li>{{ genre }}</li>
+  {% endfor %}
+  </ul>
+  {% endblock %}
