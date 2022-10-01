@@ -13,6 +13,13 @@ from .models import Author, Genre, Book, BookInstance, Language
 
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('last_name', 'first_name', 'date_of_birth', 'date_of_death') 
+
+    # fields = ['first_name', 'last_name', ('date_of_birth', 'date_of_death')]
+    fieldsets = (
+        ('Name', {'fields' : ('first_name', 'last_name')}),
+        ('Details', {'fields' : [('date_of_birth', 'date_of_death')]})
+    )
+
 admin.site.register(Author, AuthorAdmin)
 
 
