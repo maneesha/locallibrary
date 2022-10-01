@@ -43,6 +43,8 @@ class Book(models.Model):
 
     genre = models.ManyToManyField(Genre, help_text="Select a genre for this book")
 
+    language = models.ForeignKey(Language, help_text = "Select the book's language", on_delete=models.SET_NULL, null=True)
+
     def __str__(self):
         """string for representing the model object"""
 
