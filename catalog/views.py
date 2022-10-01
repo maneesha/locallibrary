@@ -15,11 +15,14 @@ def index(request):
     # Available books (status == 'a')
     num_instances_available = BookInstance.objects.filter(status__exact='a').count()
 
+    all_genres = Genre.objects.values_list('name', flat=True)
+
     context = {
         'num_books': num_books,
         'num_instances': num_instances,
         'num_instances_available': num_instances_available,
         'num_authors': num_authors,
+        'all_genres': all_genres,
     }
 
     # Render the HTML template index.html with data from context
