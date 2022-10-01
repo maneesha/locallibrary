@@ -25,7 +25,7 @@ class BookAdmin(admin.ModelAdmin):
 
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('id', 'book', 'status')
 
 @admin.register(Genre)
 class GenreAdmin(admin.ModelAdmin):
