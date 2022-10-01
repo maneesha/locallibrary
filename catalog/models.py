@@ -1,5 +1,5 @@
 from django.db import models
-from django.db import reverse # used to generate URLs by reversing the URL patterns 
+from django.urls import reverse # used to generate URLs by reversing the URL patterns 
 import uuid # Universally Unique Identifier. Required for unique book instances. Used as alternative to AutoField for primary_key?
 
 # Create your models here.
